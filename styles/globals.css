@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-[#141414] text-white;
+    @apply bg-[#141414] text-white !scrollbar-thin !scrollbar-track-transparent !scrollbar-thumb-red-600;
   }
   header {
     @apply flex fixed top-0 z-50 w-full justify-between items-center p-4 transition-all lg:px-10 lg:py-6;
