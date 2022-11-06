@@ -2,6 +2,7 @@ import { Movie } from "../typings"
 import Image from 'next/image';
 
 interface Props {
+    // movie: Movie | DocumentData
     movie: Movie,
 }
 
