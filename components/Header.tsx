@@ -1,3 +1,7 @@
+import { SearchIcon } from "@heroicons/react/outline";
+import { BellIcon } from "@heroicons/react/outline";
+import Link from "next/link";
+
 function Header() {
   return (
     <header>
@@ -9,7 +13,7 @@ function Header() {
           height={100}
           className="cursor-pointer object-contain"
         />
-        <ul className="hidden md:flex space-x-4" >
+        <ul className="hidden md:flex space-x-4">
           <li className="headerLink" >Home</li>
           <li className="headerLink" >Tv Shows</li>
           <li className="headerLink" >Movies</li>
@@ -19,7 +23,18 @@ function Header() {
       </div>
 
       {/* Right side of navbar */}
-      <div></div>
+      <div className="font-light text-sm flex space-x-4" >
+        <SearchIcon className="hidden sm:inline h-6 w-6" />
+        <p className="hidden lg:inline" >Kids</p>
+        <BellIcon className="h-6 w-6"/>
+        <Link href='/account'>
+        <img
+            src="https://rb.gy/g1pwyx"
+            alt=""
+            className="cursor-pointer rounded"
+          />
+        </Link>
+      </div>
     </header>
   );
 }
