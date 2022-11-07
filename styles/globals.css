@@ -12,6 +12,9 @@
 }
 
 @layer components {
+  .input {
+    @apply rounded w-full bg-[#333] px-5 py-3.5 placeholder-[gray] outline-none hover:bg-[#454545]
+  }
   .bannerButton {
     @apply flex items-center rounded gap-x-2 py-1.5 px-7 font-semibold text-sm transition hover:opacity-75 md:py-2.5 md:px-8 md:text-xl;
   }
