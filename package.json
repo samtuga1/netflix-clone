@@ -6,7 +6,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@heroicons/react": "^1.0.6",
+    "@mui/material": "^5.10.13",
     "@tailwindcss/line-clamp": "^0.4.2",
     "firebase": "^9.13.0",
     "next": "latest",
@@ -14,6 +17,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.39.1",
     "react-icons": "^4.6.0",
+    "recoil": "^0.7.6",
     "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {
