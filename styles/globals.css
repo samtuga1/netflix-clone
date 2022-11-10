@@ -21,4 +21,7 @@
   .headerLink {
     @apply cursor-pointer text-sm font-light text-[#e5e5e5] transition duration-[.4s] hover:text-[#b3b3b3];
   }
+  .modalButton {
+    @apply flex h-11 w-11 border-2 rounded-full items-center justify-center border-[grey] bg-[#2a2a2a]/60 transition hover:border-white hover:bg-white/10;
+  }
 }
