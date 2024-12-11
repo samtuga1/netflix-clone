@@ -9,6 +9,7 @@ import {
 import { useRouter } from "next/router";
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { auth } from "../firebase";
+import toast from "react-hot-toast";
 
 interface IAuth {
   user: User | null;
@@ -66,7 +67,15 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         router.push("/");
       })
       .catch((error) => {
-        alert(error.message);
+        let message = "An error occured";
+        if (error.code == "auth/email-already-in-use") {
+          message = "Email address already in use";
+        } else if (error.code == "auth/invalid-email") {
+          message = "Invalid email address";
+        } else if (error.code == "auth/weak-password") {
+          message = "Weak password";
+        }
+        toast.error(message);
       })
       .finally(() => {
         setLoading(false);
@@ -81,7 +90,14 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         router.push("/");
       })
       .catch((error) => {
-        alert(error.message);
+        console.log(error.code);
+        let message = "An error occured";
+        if (error.code == "auth/invalid-login-credentials") {
+          message = "Invalid login credentials";
+        } else if (error.code == "auth/invalid-email") {
+          message = "Invalid email address";
+        }
+        toast.error(message);
       })
       .finally(() => {
         setLoading(false);
@@ -95,7 +111,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         setUser(null);
       })
       .catch((error) => {
-        alert(error.message);
+        toast.error(error.message);
       })
       .finally(() => {
         setLoading(false);
